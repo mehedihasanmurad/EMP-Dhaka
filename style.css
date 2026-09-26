@@ -1171,7 +1171,7 @@ nav .navigation ul li.dropdown>.dropdown-menu li a:hover {
 
 
 
-/* ------------------4th.......Part-----------Factory Section................................ */
+/* ------------------4th.......Part-----------Factory Page Section................................ */
 /* ------------------4th.......Part-----------Factory Section................................ */
 
 /* ================= SUMMARY OF OUR FACTORY ================= */
@@ -1512,7 +1512,7 @@ nav .navigation ul li.dropdown>.dropdown-menu li a:hover {
 
 
 
-/* =========================================================== OUR CLIENTS ======================================================================================== */
+/* =========================================================== OUR CLIENTS page ======================================================================================== */
 
 .our-clients {
     width: 100%;
@@ -1614,6 +1614,74 @@ nav .navigation ul li.dropdown>.dropdown-menu li a:hover {
     color: rgb(21, 21, 100);
     text-decoration: underline;
 }
+
+
+/*....................................................................gallery page...................................*/
+/* ================= PHOTO GALLERY ================= */
+
+.photo-gallery {
+    width: 100%;
+    padding: 80px 8%;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+.photo-gallery-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.photo-gallery-title h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(21, 21, 100);
+}
+
+
+/* ================= GALLERY GRID ================= */
+
+.photo-gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+
+/* ================= PHOTO CARD ================= */
+
+.photo-card {
+    width: 100%;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10); */
+    border: 1px solid gray;
+    transition: 0.3s ease;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+
+/* Hover */
+
+/* .photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.photo-card:hover img {
+    transform: scale(1.08);
+} */
 
 
 
@@ -1756,6 +1824,23 @@ nav .navigation ul li.dropdown>.dropdown-menu li a:hover {
         font-size: 32px;
     }
 
+    /* ......................................Gallery Page...................................... */
+    .photo-gallery {
+        padding: 70px 5%;
+    }
+
+    .photo-gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .photo-card {
+        height: 200px;
+    }
+
+    .photo-gallery-title h1 {
+        font-size: 32px;
+    }
 
 
 }
@@ -2188,6 +2273,28 @@ nav .navigation ul li.dropdown>.dropdown-menu li a:hover {
         font-size: 18px;
     }
 
+    /*...............................................Gallery Page.................................*/
+    .photo-gallery {
+        padding: 60px 5%;
+    }
+
+    .photo-gallery-title {
+        margin-bottom: 30px;
+    }
+
+    .photo-gallery-title h1 {
+        font-size: 28px;
+    }
+
+    .photo-gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .photo-card {
+        height: 160px;
+        border-radius: 8px;
+    }
 
 
 
