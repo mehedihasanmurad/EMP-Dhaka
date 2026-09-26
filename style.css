@@ -1,0 +1,2042 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(35, 35, 85);
+}
+
+span {
+    font-size: .9rem;
+    color: #757373;
+}
+
+h6 {
+    font-size: 1.1rem;
+    color: rgb(24, 24, 49);
+}
+
+/* header */
+.header-text {
+    display: flex;
+    background-color: green;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+}
+
+.header-text h3 {
+    font-size: 12px;
+    color: #fff;
+}
+
+.header-font {
+    font-size: large;
+}
+
+.header-font i {
+    padding: 5px 8px;
+    font-size: 20px;
+    border: 1px solid rgb(21, 21, 100);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.header-font i:hover {
+    background-color: rgb(21, 21, 100);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ............................navigation .........................*/
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 8vw;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    /* top: 0; */
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.logo-design {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo-design a {
+    color: green;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+nav .navigation {
+    display: flex;
+}
+
+#menu-close {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+#menu-btn {
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: rgb(21, 21, 100);
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* .navigation ul li .active {
+    color: #FDC938;
+} */
+
+nav .navigation ul li a.active,
+nav .navigation ul li a:hover {
+    color: blue;
+}
+
+
+/* ................................products dropdown................................. */
+/* Products Dropdown */
+/* ================= PRODUCTS DROPDOWN ================= */
+
+nav .navigation ul li.dropdown {
+    position: relative;
+}
+
+
+/* Dropdown menu */
+
+nav .navigation ul li.dropdown>.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 8px 0;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+}
+
+
+/* Dropdown show */
+
+nav .navigation ul li.dropdown:hover>.dropdown-menu {
+    display: flex;
+}
+
+
+/* Dropdown li */
+
+nav .navigation ul li.dropdown>.dropdown-menu li {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+/* Dropdown links */
+
+nav .navigation ul li.dropdown>.dropdown-menu li a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    margin: 0;
+    color: rgb(21, 21, 100);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+
+/* Dropdown hover */
+
+nav .navigation ul li.dropdown>.dropdown-menu li a:hover {
+    background-color: #f2f2f2;
+    color: #FDC938;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+    background: #f4f4f4;
+}
+
+
+/* Slider */
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/* Individual Slide */
+
+.hero-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 80px;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================
+   BACKGROUND TRANSPARENT IMAGE
+========================= */
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+
+/* =========================
+   HERO CONTAINER
+========================= */
+
+.hero-container {
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    margin: auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+
+}
+
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.hero-content {
+    width: 52%;
+    padding-left: 30px;
+}
+
+.hero-small-title {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #008000;
+    margin-bottom: 18px;
+}
+
+.hero-content h1 {
+    font-size: 62px;
+    line-height: 1.05;
+    color: #151553;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    max-width: 520px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #008000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #005f00;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CAP IMAGE
+========================= */
+.hero-image {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 90%;
+    max-width: 600px;
+    max-height: 550px;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 20px rgba(0, 0, 0, 0.20));
+}
+
+/* =========================
+   DOTS
+========================= */
+.hero-dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 9px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #bbb;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dot.active {
+    width: 28px;
+    border-radius: 10px;
+    background: #008000;
+}
+
+
+/* =========================
+   HOME ABOUT SECTION
+========================= */
+.home-about {
+    width: 100%;
+    padding: 90px 8%;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.home-about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* =========================
+   LEFT SIDE - TEXT
+========================= */
+.home-about-text {
+    width: 50%;
+    flex: 0 0 50%;
+}
+
+.home-about-text h1 {
+    font-size: 42px;
+    margin: 0 0 20px;
+    color: #222;
+    font-weight: 700;
+}
+
+.home-about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 0 28px;
+}
+
+/* =========================
+   READ MORE BUTTON
+========================= */
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 32px;
+    background: blue;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 900;
+    transition: 0.3s ease;
+    border: 1px solid blue;
+    font-family: sans-serif;
+    border-radius: 5px;
+}
+
+.read-more-btn:hover {
+    background: white;
+    color: black;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+
+
+/* =========================
+   RIGHT SIDE - IMAGE
+========================= */
+.home-about-image {
+    width: 50%;
+    flex: 0 0 50%;
+}
+
+.home-about-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+/*........................................Product Section...........................................*/
+/* Main Carousel */
+
+.carousel-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Arrow */
+.arrow {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    color: rgb(35, 35, 243);
+    font-size: 40px;
+    line-height: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow:hover {
+    color: blue;
+}
+
+/* Card Area */
+.carousel-window {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Card Track */
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.6s ease;
+}
+
+/* Card */
+.card {
+    flex: 0 0 calc((100% - 60px) / 4);
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 18px;
+
+    text-align: center;
+}
+
+.card-content h3 {
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 7px 18px;
+    background: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.card-btn:hover {
+    border: 1px solid green;
+    background-color: white;
+    color: black;
+}
+
+
+/*.............................................Testimonial Section...........................................*/
+.testimonial-section {
+    width: 100%;
+    padding: 70px 20px;
+    background: #f5f5f5;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.testimonial {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.testimonial-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.8s ease-in-out;
+    will-change: transform;
+}
+
+.testimonial-card {
+    flex: 0 0 calc(50% - 12.5px);
+    box-sizing: border-box;
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* User */
+.testimonial-user {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.testimonial-user img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.testimonial-user h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #222;
+}
+
+/* Description */
+.testimonial-card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/*..................................................Footer Section...................................................*/
+/* =========================
+   FOOTER SECTION
+========================= */
+
+.footer-section {
+    width: 100%;
+    background: rgba(36, 93, 49, 1);
+    color: #ffffff;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
+/* Main Footer Container */
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1.2fr 1fr;
+    gap: 40px;
+    padding-bottom: 50px;
+}
+
+/* Footer Box */
+
+.footer-box h3 {
+    font-size: 20px;
+    margin-bottom: 22px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Small line under heading */
+
+.footer-box h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45px;
+    height: 3px;
+    background: #00a859;
+}
+
+/*..................................................emp dhaka details...................................................*/
+.about-company {
+    background: #2bc2ac;
+    padding: 70px 20px;
+    width: 100%;
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    color: #263238;
+    font-family: Arial, sans-serif;
+}
+
+.section-title h2,
+.section-block h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #172b2b;
+}
+
+.why-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.why-item h3,
+.collection-list h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.why-item p,
+.collection-list p,
+.section-block p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.section-block {
+    margin-top: 15px;
+}
+
+.collection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.section-block ul {
+    margin-top: 10px;
+    list-style: none;
+}
+
+.section-block li {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+/* Company Links */
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00a859;
+    padding-left: 5px;
+}
+
+.footer-icon {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* ......................................Company Info ....................................*/
+
+.company-info p {
+    color: #d1d5db;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Google Map */
+
+.map-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Social Section */
+.social-box p {
+    color: #d1d5db;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Social Icons */
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #00a859;
+    color: #ffffff;
+    transform: translateY(-5px);
+}
+
+
+/* Footer Bottom */
+.footer-bottom {
+    width: 100%;
+    border-top: 1px solid #374151;
+    text-align: center;
+    padding: 20px 10px;
+    box-sizing: border-box;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #1b1f24;
+    font-size: 14px;
+}
+
+
+/*..................................................................About page..................................................................................
+
+..................................................................................................................................................
+
+.............................................................................................................................*/
+
+
+/* =================================
+   ABOUT BANNER
+================================= */
+.about-banner {
+    width: 100%;
+    height: 320px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)),
+        url("images/about-page/about-page-head-banner.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-banner-content h1 {
+    color: #ffffff;
+    font-size: 35px;
+    margin-top: 60px;
+    font-weight: 700;
+}
+
+.about-banner-content p {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* =================================
+   ABOUT CONTENT
+================================= */
+.about-details {
+    width: 100%;
+    padding: 90px 8%;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.about-details-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* =================================
+   LEFT SIDE - TEXT
+================================= */
+.about-details-text {
+    width: 50%;
+    flex: 0 0 50%;
+}
+
+.about-details-text h2 {
+    font-size: 38px;
+    color: #222222;
+    margin: 0 0 25px;
+    font-weight: 700;
+}
+
+.about-details-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555555;
+    margin: 0 0 18px;
+}
+
+/* =================================
+   RIGHT SIDE - IMAGE
+================================= */
+.about-details-image {
+    width: 50%;
+    flex: 0 0 50%;
+}
+
+.about-details-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.contact-banner {
+    width: 100%;
+    min-height: 250px;
+    background-image: url("images/about-page/about-page-learn\ -banner.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.contact-overlay {
+    width: 100%;
+    min-height: 250px;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.contact-content {
+    max-width: 700px;
+    color: white;
+}
+
+.contact-content h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.contact-content p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.contact-btn {
+    display: inline-block;
+    background: blue;
+    color: white;
+    padding: 9px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 2px solid blue;
+}
+
+.contact-btn:hover {
+    background: white;
+    border: 2px solid blue;
+    color: blue;
+}
+
+
+
+
+
+
+
+
+/*........................3rd ------------- part--------- Management Section ................................*/
+
+/*........................................................Management Team...................................................................*/
+
+/* ========================= MANAGEMENT TEAM ========================= */
+.management-team {
+    width: 100%;
+    padding: 80px 20px;
+    background: #f5f7fb;
+}
+
+.management-team .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ========================= HEADING ========================= */
+.team-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.team-heading h2 {
+    margin: 0 0 10px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+}
+
+.team-heading p {
+    margin: 0;
+    color: #777;
+    font-size: 16px;
+}
+
+/* ========================= TEAM ROW ========================= */
+.team-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* ========================= TEAM CARD ========================= */
+.team-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 22px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.13);
+}
+
+/* ========================= TEAM IMAGE ========================= */
+.team-card>img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    margin-bottom: 18px;
+}
+
+/* ========================= NAME ========================= */
+.team-card h3 {
+    margin: 0 0 5px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* ========================= POSITION ========================= */
+.team-card .position {
+    margin: 0 0 18px;
+    font-size: 14px;
+    color: #777;
+}
+
+/* ========================= SOCIAL ICONS ========================= */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icons .facebook {
+    background: #1877f2;
+}
+
+.social-icons .instagram {
+    background: #e4405f;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* ========================= CONTACT INFO ========================= */
+.contact-info {
+    width: 100%;
+}
+
+.contact-info p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 12px;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info i {
+    width: 20px;
+    min-width: 20px;
+    text-align: center;
+    color: #555;
+}
+
+
+
+
+/* ------------------4th.......Part-----------Factory Section................................ */
+/* ------------------4th.......Part-----------Factory Section................................ */
+
+/* ================= SUMMARY OF OUR FACTORY ================= */
+
+.factory-summary {
+    width: 100%;
+    padding: 80px 8%;
+    background-color: #fff;
+}
+
+/* Heading */
+
+.factory-summary-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.factory-summary-title h1 {
+    font-size: 36px;
+    color: rgb(21, 21, 100);
+    margin: 0;
+    font-weight: 700;
+}
+
+
+/* Main Container */
+
+.factory-summary-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Left Text */
+
+.factory-summary-text {
+    width: 50%;
+}
+
+.factory-summary-text h2 {
+    font-size: 16px;
+    color: rgb(21, 21, 100);
+    margin-bottom: 8px;
+}
+
+.factory-summary-text p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Right Image */
+
+.factory-summary-image {
+    width: 50%;
+}
+
+.factory-summary-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+
+/* ================= PRODUCTION CAPACITY ================= */
+
+.production-capacity {
+    width: 100%;
+    padding: 40px 8%;
+    background: #f8f9fa;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+/* Heading */
+.production-capacity h1 {
+    margin: 0 0 20px;
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(21, 21, 100);
+    text-align: center;
+}
+
+/* Cards Container */
+
+.capacity-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+}
+
+
+/* Individual Card */
+
+.capacity-card {
+    width: 300px;
+    min-height: 230px;
+    padding: 35px 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Card Hover */
+
+.capacity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.13);
+}
+
+
+/* Icon Circle */
+
+.capacity-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Icon */
+.capacity-icon i {
+    font-size: 30px;
+    color: blue;
+}
+
+/* DAY */
+.capacity-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(21, 21, 100);
+}
+
+/* Pieces */
+.capacity-card p {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+}
+
+
+/* ================= FACTORY MACHINE RESOURCE ================= */
+.machine-resource {
+    width: 100%;
+    padding: 30px 8%;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* Heading */
+.machine-resource-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.machine-resource-title h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(21, 21, 100);
+}
+
+/* Table Wrapper */
+.machine-table-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    overflow-x: auto;
+    margin-bottom: 0px;
+}
+
+/* Table */
+.machine-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Column Width */
+.machine-table th:nth-child(1),
+.machine-table td:nth-child(1) {
+    width: 45%;
+}
+
+.machine-table th:nth-child(2),
+.machine-table td:nth-child(2) {
+    width: 20%;
+}
+
+.machine-table th:nth-child(3),
+.machine-table td:nth-child(3) {
+    width: 35%;
+}
+
+/* All Table Text */
+.machine-table th,
+.machine-table td {
+    text-align: center;
+    padding: 15px 12px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+/* First Row / Header */
+.machine-table thead tr {
+    background-color: rgb(16, 16, 202);
+    color: #fff;
+}
+
+.machine-table thead th {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Body Rows */
+.machine-table tbody tr {
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+/* Body Hover */
+.machine-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Last Row */
+.machine-table tbody tr:last-child {
+    background-color: rgb(16, 16, 202);
+    font-weight: 600;
+    color: #fff;
+}
+
+/* ================= BUTTON ================= */
+.machine-resource-button {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.machine-resource-button a {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    border: 1px solid blue;
+}
+
+.machine-resource-button a:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid blue;
+}
+
+/* ================= GALLERY SECTION ================= */
+
+.gallery-section {
+    width: 100%;
+    padding: 80px 8%;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+.gallery-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.gallery-title h1 {
+    margin: 0 0 10px;
+    font-size: 36px;
+    font-weight: 700;
+    color: rgb(21, 21, 100);
+}
+
+.gallery-title p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Gallery Grid */
+.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+/* Gallery Card */
+.gallery-card {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.08);
+}
+
+
+
+
+
+
+
+
+/* ........................................Responsive design tablet ..................................*/
+
+@media (max-width: 769px) {
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav img {
+        width: 130px;
+    }
+
+    #menu-close {
+        display: initial;
+        font-size: 1.6rem;
+        color: #fff;
+        padding: 30px 0 20px 20px;
+    }
+
+    #menu-btn {
+        display: initial;
+    }
+
+    nav .navigation ul {
+        position: absolute;
+        top: 0;
+        right: -220px;
+        width: 220px;
+        height: 100vh;
+        background-color: rgba(17, 20, 104, 0.45);
+        backdrop-filter: blur(4.5px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transition: 0.3s ease;
+    }
+
+    nav .navigation ul.active {
+        right: 0;
+    }
+
+    nav .navigation ul li {
+        padding: 20px 0 20px 40px;
+        margin-left: 0;
+    }
+
+    nav .navigation ul li a {
+        color: #fff;
+    }
+
+    /*Hero Section*/
+    .hero {
+        height: 550px;
+    }
+
+    .hero-content {
+        width: 55%;
+        padding-left: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        width: 45%;
+    }
+
+    /*..........................Products Section.......................................*/
+    .card {
+        flex: 0 0 calc((100% - 20px) / 2);
+    }
+
+    /*........................footer section......................*/
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    /*.........................................................................Management Section................................................*/
+    .management-team {
+        padding: 60px 20px;
+    }
+
+    .team-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .team-heading h2 {
+        font-size: 32px;
+    }
+
+    /*........................................................Factory Section......................................*/
+    .gallery-section {
+        padding: 70px 5%;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+
+    .gallery-card {
+        height: 200px;
+    }
+
+    .gallery-title h1 {
+        font-size: 32px;
+    }
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*.................. Responsive Design mobile tab............. */
+
+@media (max-width:475px) {
+    .header-text {
+        display: block;
+        height: 100px;
+        text-align: center;
+    }
+
+    .header-text h3 {
+        padding: 5px 7px;
+
+    }
+
+    .header-font {
+        padding: 5px 10px;
+    }
+
+    /*..........................................Hero Section..................................................*/
+    .hero {
+        height: 700px;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-btn {
+        padding: 12px 25px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 320px;
+        margin-top: 10px;
+    }
+
+    .hero-image img {
+        width: 80%;
+        max-height: 300px;
+    }
+
+    /*...................................Home About Section......................................*/
+
+    .home-about {
+        padding: 60px 6%;
+    }
+
+    .home-about-container {
+        flex-direction: column !important;
+        gap: 40px;
+    }
+
+    .home-about-text,
+    .home-about-image {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .home-about-text h1 {
+        font-size: 32px;
+    }
+
+    .home-about-image img {
+        height: 350px;
+    }
+
+
+    /*.......................................Products section..........................................*/
+    /* Main Carousel */
+    .carousel-container {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
+    }
+
+    .card {
+        flex: 0 0 100%;
+    }
+
+    /*...................................Testimonial section................................*/
+    .testimonial-section {
+        padding: 50px 15px;
+    }
+
+    .testimonial-track {
+        gap: 15px;
+    }
+
+    .testimonial-card {
+        flex: 0 0 100%;
+        padding: 30px 20px;
+    }
+
+    .testimonial-user img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .testimonial-user h3 {
+        font-size: 18px;
+    }
+
+    .testimonial-card p {
+        font-size: 14px;
+    }
+
+
+    /*.....................emp dhaka details.....................*/
+    .about-company {
+        padding: 45px 18px;
+    }
+
+    .section-title h2,
+    .section-block h2 {
+        font-size: 23px;
+    }
+
+    .why-item {
+        display: block;
+    }
+
+    .why-item h3,
+    .collection-list h3 {
+        white-space: normal;
+        font-size: 16px;
+    }
+
+    .why-item p,
+    .collection-list p,
+    .section-block p,
+    .section-block li {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .section-block {
+        margin-top: 30px;
+    }
+
+    /*....................................................footer section.........................................................*/
+
+    .footer-section {
+        padding-top: 45px;
+    }
+
+    .footer-container {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-box h3 {
+        font-size: 19px;
+    }
+
+    .map-container {
+        height: 220px;
+    }
+
+    .social-icons {
+        margin-bottom: 10px;
+    }
+
+
+    /*...............................................About page.......................*/
+    .about-banner {
+        height: 250px;
+    }
+
+    .about-banner-content h1 {
+        font-size: 40px;
+    }
+
+    .about-details {
+        padding: 60px 6%;
+    }
+
+    .about-details-container {
+        flex-direction: column !important;
+        gap: 40px;
+    }
+
+    .about-details-text,
+    .about-details-image {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .about-details-text h2 {
+        font-size: 30px;
+    }
+
+    .about-details-image img {
+        height: 350px;
+    }
+
+    .contact-banner {
+        min-height: 350px;
+    }
+
+    .contact-overlay {
+        min-height: 350px;
+    }
+
+    .contact-content h3 {
+        font-size: 27px;
+    }
+
+    .contact-content p {
+        font-size: 15px;
+    }
+
+    .contact-btn {
+        padding: 10px 22px;
+    }
+
+    /*.................................................Management Section................................................*/
+    .management-team {
+        padding: 50px 15px;
+    }
+
+    .team-heading {
+        margin-bottom: 35px;
+    }
+
+    .team-heading h2 {
+        font-size: 28px;
+    }
+
+    .team-heading p {
+        font-size: 14px;
+    }
+
+    .team-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-card {
+        max-width: 380px;
+        margin: 0 auto;
+        padding: 28px 22px;
+    }
+
+    .team-card>img {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    /*.............................................................Factory Summary Section................................................*/
+
+    .factory-summary {
+        padding: 60px 5%;
+    }
+
+    .factory-summary-title {
+        margin-bottom: 35px;
+    }
+
+    .factory-summary-title h1 {
+        font-size: 28px;
+    }
+
+    .factory-summary-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .factory-summary-text {
+        width: 100%;
+    }
+
+    .factory-summary-image {
+        width: 100%;
+    }
+
+    .factory-summary-image img {
+        height: 280px;
+    }
+
+    .factory-summary-text h2 {
+        font-size: 24px;
+    }
+
+    .factory-summary-text p {
+        font-size: 15px;
+    }
+
+    /*Production Capacity*/
+    .production-capacity {
+        padding: 60px 5%;
+    }
+
+    .production-capacity h1 {
+        font-size: 28px;
+        margin-bottom: 35px;
+    }
+
+    .capacity-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .capacity-card {
+        width: 100%;
+        max-width: 350px;
+        min-height: 210px;
+    }
+
+    .machine-resource {
+        padding: 60px 5%;
+    }
+
+    .machine-resource-title h1 {
+        font-size: 28px;
+    }
+
+    .machine-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .machine-table {
+        min-width: 650px;
+        font-size: 14px;
+    }
+
+    .machine-table th,
+    .machine-table td {
+        padding: 12px 10px;
+    }
+
+    .gallery-section {
+        padding: 60px 5%;
+    }
+
+    .gallery-title {
+        margin-bottom: 30px;
+    }
+
+    .gallery-title h1 {
+        font-size: 28px;
+    }
+
+    .gallery-title p {
+        font-size: 14px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .gallery-card {
+        height: 160px;
+        border-radius: 8px;
+    }
+
+
+
+
+
+
+
+
+
+}
